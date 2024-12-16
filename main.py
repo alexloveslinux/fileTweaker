@@ -1,5 +1,6 @@
 import argparse
 import os
+import shutil
 
 def create(args):
     try:
@@ -35,7 +36,15 @@ def read(args):
         print('Data:', rdfile.read())
    except:
     print('Unexpected error')
-     
+
+def copy(args):
+   try:
+    copyfile = args.copyfile[0]
+    copyto = args.copyfile[1]
+    shutil.copy(copyfile, copyto)
+   except:
+    print('Unexpected error')
+
 
 parser = argparse.ArgumentParser(description = 'PyTwK')
 
@@ -43,6 +52,7 @@ parser.add_argument('--create', type = str, nargs = 1, metavar = 'createfile', h
 parser.add_argument('--modify', type = str, nargs = 2, metavar = ('modifyfile', 'editdata'), help = 'Modify file')
 parser.add_argument('--delete', type = str, nargs = 1, metavar = 'deletefile', help = 'Delete file')
 parser.add_argument('--read', type = str, nargs = 1, metavar = 'readfile', help = 'Read file')
+parser.add_argument('--copy', type = str, nargs = 2, metavar = ('copyfile', 'copyto'), help = 'Copy file')
 
 args = parser.parse_args()
 
@@ -54,3 +64,5 @@ elif args.delete != None:
     delete(args)
 elif args.read != None:
     read(args)
+elif args.copy != None:
+    copy(args)
