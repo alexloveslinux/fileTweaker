@@ -29,14 +29,6 @@ def delete(args):
     except:
      print('Unexpected error')
 
-def read(args):
-   try:
-    readfile = args.readfile[0]
-    with open(readfile, 'r') as rdfile:
-        print('Data:', rdfile.read())
-   except:
-    print('Unexpected error')
-
 def copy(args):
    try:
     copyfile = args.copyfile[0]
@@ -51,7 +43,6 @@ parser = argparse.ArgumentParser(description = 'PyTwK')
 parser.add_argument('--create', type = str, nargs = 1, metavar = 'createfile', help = 'Create file')
 parser.add_argument('--modify', type = str, nargs = 2, metavar = ('modifyfile', 'editdata'), help = 'Modify file')
 parser.add_argument('--delete', type = str, nargs = 1, metavar = 'deletefile', help = 'Delete file')
-parser.add_argument('--read', type = str, nargs = 1, metavar = 'readfile', help = 'Read file')
 parser.add_argument('--copy', type = str, nargs = 2, metavar = ('copyfile', 'copyto'), help = 'Copy file')
 
 args = parser.parse_args()
@@ -62,7 +53,5 @@ elif args.modify != None:
     modify(args)
 elif args.delete != None:
     delete(args)
-elif args.read != None:
-    read(args)
 elif args.copy != None:
     copy(args)
