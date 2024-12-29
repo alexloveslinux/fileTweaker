@@ -1,5 +1,5 @@
-pytwk.spec
-pyvenv.cfg
-compile.bat
-dist/
-build/
+test.py
+tkinter/compile.bat
+tkinter/PWK.spec
+tkinter/dist/
+tkinter/build/
