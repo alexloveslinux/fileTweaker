@@ -1,2 +1,2 @@
 # FileTweaker
-Simple file tweaker using tkinter, os and shutil.
+Simple file tweaker using tkinter and os.
