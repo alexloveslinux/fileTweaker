@@ -4,7 +4,6 @@ from tkinter import simpledialog as sd
 from tkinter import messagebox as mb
 from tkinter import ttk
 from os import *
-from shutil import *
 
 fn = [('All files', '*.*')]
 
